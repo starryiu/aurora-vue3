@@ -45,8 +45,10 @@ renderer.image = function (href, title, text) {
   img.src = cdnHref
   const compelete = (isSuccess) => {
     const dom = document.getElementById(id)
-    dom.src = isSuccess ? cdnHref : href
-    dom.style.opacity = 1
+    if(dom){
+      dom.src = isSuccess ? cdnHref : href
+      dom.style.opacity = 1
+    }
   }
   img.onload = () => compelete(true)
   img.onerror = () => compelete(false)
