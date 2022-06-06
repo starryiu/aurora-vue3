@@ -7,7 +7,7 @@
           <div class="post-head">
             <div class="post-title">
               <h1>{{ post.title }}</h1>
-              <span>{{ post.cover.title }}</span>
+              <span v-if="!['Pixiv: ','Pixiv:'].includes(post.cover.title)">{{ post.cover.title }}</span>
             </div>
             <div class="post-meta">
               <span>

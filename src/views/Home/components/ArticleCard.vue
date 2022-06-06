@@ -10,7 +10,7 @@
         <Cover :src="post.cover.src" :alt="post.cover.title" :loadCover="true" />
         <div class="post-head">
           <h3>{{ post.title }}</h3>
-          <span>{{ post.cover.title }}</span>
+          <span v-if="!['Pixiv: ','Pixiv:'].includes(post.cover.title)">{{ post.cover.title }}</span>
         </div>
       </div>
       <div class="post-body">
