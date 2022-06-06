@@ -8,7 +8,7 @@ import Zooming from 'zooming'
 import ClipboardJS from 'clipboard'
 import katex from 'katex'
 import hljs from '@/assets/lib/highlight'
-import { fileCDN, handleImg } from '@/utils'
+import { handleImg } from '@/utils'
 
 function mathsExpression(expr) {
   if (expr.match(/^\$\$[\s\S]*\$\$$/)) {
@@ -39,21 +39,21 @@ renderer.heading = function (text, level, raw, slugger) {
 renderer.image = function (href, title, text) {
   IMG_ID++
   const id = `img-${IMG_ID}`
-  const cdnHref = fileCDN(href)
+  const __href = href
 
   const img = new Image()
-  img.src = cdnHref
-  const compelete = (isSuccess) => {
+  img.src = __href
+  const compelete = () => {
     const dom = document.getElementById(id)
     if(dom){
-      dom.src = isSuccess ? cdnHref : href
+      dom.src = __href
       dom.style.opacity = 1
     }
   }
-  img.onload = () => compelete(true)
-  img.onerror = () => compelete(false)
+  img.onload = () => compelete()
+  img.onerror = () => compelete()
 
-  const { style, isFull } = handleImg(cdnHref)
+  const { style, isFull } = handleImg(__href)
 
   return `<span class="img-box ${isFull ? 'full' : ''}">
   <span class="bg" style="${style}">
