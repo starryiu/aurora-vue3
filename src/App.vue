@@ -95,7 +95,7 @@ export default {
     },
     // 滚动到顶部
     scrollTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      $('body,html').stop().animate({scrollTop:0})
     },
   },
 

@@ -97,7 +97,7 @@ export default {
       })
     },
     scrollTop(cb) {
-      window.scrollTo({ top: 0, behavior: 'smooth' })
+      $('body,html').stop().animate({scrollTop:0})
       const delayTime = this.$config.isMobile ? 800 : 600
       setTimeout(cb, delayTime)
     },
