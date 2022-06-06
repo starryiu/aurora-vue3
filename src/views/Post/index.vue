@@ -61,7 +61,7 @@ export default {
       initComment: false,
     }
   },
-  async created() {
+  async mounted() {
     const { number } = this.$route.params
     this.post = await this.queryPost(number)
     this.$nextTick(() => {

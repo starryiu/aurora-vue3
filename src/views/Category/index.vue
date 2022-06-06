@@ -82,7 +82,7 @@ export default {
       return this.page >= this.maxPage
     },
   },
-  async created() {
+  async mounted() {
     await this.queryCategory()
     this.initComment = true
   },

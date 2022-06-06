@@ -61,7 +61,7 @@ export default {
       initComment: false,
     }
   },
-  async created() {
+  async mounted() {
     await this.querySongs()
     this.initComment = true
   },

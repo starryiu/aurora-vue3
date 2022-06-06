@@ -75,7 +75,7 @@ export default {
       return this.page >= this.maxPage
     },
   },
-  async created() {
+  async mounted() {
     await this.queryTag()
     this.initComment = true
   },

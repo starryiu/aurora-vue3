@@ -59,7 +59,7 @@ export default {
       return this.page >= this.maxPage
     },
   },
-  async created() {
+  async mounted() {
     if (!this.totalCount) {
       await this.$store.dispatch('queryArchivesCount')
     }

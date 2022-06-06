@@ -3,24 +3,20 @@
 .fade-transform-enter-active {
   transition: all 0.5s;
 }
-.fade-transform-enter {
+.fade-transform-enter-from {
   opacity: 0;
-
   @include pc-layout {
     transform: translateY(-30px);
   }
-
   @include sp-layout {
     transform: translateY(-20px);
   }
 }
 .fade-transform-leave-to {
   opacity: 0;
-
   @include pc-layout {
     transform: translateY(30px);
   }
-
   @include sp-layout {
     transform: translateY(20px);
   }

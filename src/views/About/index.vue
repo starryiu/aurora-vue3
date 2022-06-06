@@ -72,7 +72,7 @@ export default {
       initComment: false,
     }
   },
-  async created() {
+  async mounted() {
     await this.queryAbout()
     this.initComment = true
   },

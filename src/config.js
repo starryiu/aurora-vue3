@@ -137,9 +137,8 @@ export default {
 
   /**
    * 文章默认图
-   * 已更改 原图：//cdn.jsdelivr.net/gh/chanshiyucx/yoi/bg/defaultCover.jpg
    */
-  defaultCover: '//view.moezx.cc/images/2022/05/26/305138bb371de1b424b311f9ae2b15f5.jpg',
+  defaultCover: '//cdn.jsdelivr.net/gh/chanshiyucx/yoi/bg/defaultCover.jpg',
 
   /**
    * 赛钱箱

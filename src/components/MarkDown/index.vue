@@ -136,7 +136,7 @@ export default {
       clipboards: [],
     }
   },
-  created() {
+  mounted() {
     this.marked()
   },
   watch: {

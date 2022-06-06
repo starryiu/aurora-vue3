@@ -66,7 +66,7 @@ export default {
       return this.page >= this.maxPage
     },
   },
-  async created() {
+  async mounted() {
     this.totalCount = await this.$store.dispatch('queryInspirationCount')
     await this.queryInspiration()
     this.initComment = true
