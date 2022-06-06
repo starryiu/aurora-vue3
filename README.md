@@ -1,4 +1,4 @@
-# vue3-scss
+# aurora-vue3
 
 ## Project setup
 ```
