@@ -7,12 +7,12 @@ module.exports = defineConfig({
   chainWebpack(config) {
     const cdn = {
       css: [
-        '//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css'
+        '//jsd.compc.cc/npm/aplayer@1.10.1/dist/APlayer.min.css'
       ],
       js: [
-        '//cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js',
-        '//cdn.jsdelivr.net/npm/jquery-backstretch@2.1.17/jquery.backstretch.min.js',
-        '//cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js'
+        '//jsd.compc.cc/npm/jquery@3.4.1/dist/jquery.min.js',
+        '//jsd.compc.cc/npm/jquery-backstretch@2.1.17/jquery.backstretch.min.js',
+        '//jsd.compc.cc/npm/aplayer@1.10.1/dist/APlayer.min.js'
       ],
     }
     config.plugin('html').tap((args) => {
