@@ -36,7 +36,6 @@
 <script>
 import { mapState } from 'vuex'
 import Theme from './components/Theme'
-import Qrcode from './components/Qrcode'
 import { localSave, localRead } from '@/utils'
 import images from '@/assets/images'
 
@@ -44,7 +43,7 @@ const { bg } = images
 
 export default {
   name: 'Panel',
-  components: { Theme, Qrcode },
+  components: { Theme },
   data() {
     return {
       theme: '',

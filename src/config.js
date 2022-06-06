@@ -141,20 +141,6 @@ export default {
   defaultCover: '//cdn.jsdelivr.net/gh/chanshiyucx/yoi/bg/defaultCover.jpg',
 
   /**
-   * 赛钱箱
-   */
-  qrcode: [
-    {
-      name: '支付宝',
-      img: '//view.moezx.cc/images/2022/05/07/70db5f8bcc06bf574ae1e667bf91f0fe.jpg',
-    },
-    {
-      name: '微信',
-      img: '//view.moezx.cc/images/2022/05/07/864f549220f2e2aa046b0e9a9ce5253b.jpg',
-    },
-  ],
-
-  /**
    * 音乐播放器,
    */
   APlayer: [

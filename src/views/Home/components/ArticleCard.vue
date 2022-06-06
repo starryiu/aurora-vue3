@@ -75,8 +75,8 @@ export default {
     })
     this.observer.observe(this.$refs.articleCard)
   },
-  destroyed() {
-    this.observer.disconnect()
+  beforeUnmount() {
+    this.observer.unobserve(this.$refs.articleCard)
   },
   methods: {
     // 看板娘

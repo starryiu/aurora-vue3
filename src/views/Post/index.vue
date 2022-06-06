@@ -71,10 +71,8 @@ export default {
   },
   methods: {
     // 获取文章详情
-    queryPost: __memoize(function(number) {
-      return new Promise(async (resolve)=>{
-        resolve(await this.$store.dispatch('queryPost', { number }))
-      })
+    queryPost: __memoize(async function(number) {
+      return Promise.resolve(await this.$store.dispatch('queryPost', { number }))
     }),
     // 获取并增加热度
     async queryHot() {
