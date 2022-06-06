@@ -1,0 +1,44 @@
+{
+  "name": "aurora-vue3",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "stylelint src/**/*.vue src/**/*.scss --fix && vue-cli-service lint",
+    "lint:scss": "stylelint src/**/*.vue src/**/*.scss --fix"
+  },
+  "dependencies": {
+    "@aacassandra/vue3-progressbar": "^1.0.3",
+    "clipboard": "^2.0.11",
+    "core-js": "^3.8.3",
+    "gitalk": "^1.7.2",
+    "highlight.js": "^11.5.1",
+    "katex": "^0.15.6",
+    "leancloud-storage": "^4.12.2",
+    "marked": "^1.1.1",
+    "timeago.js": "^4.0.2",
+    "vue": "^3.2.13",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0",
+    "zooming": "^2.1.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-plugin-router": "~5.0.0",
+    "@vue/cli-plugin-vuex": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "postcss-html": "^1.4.1",
+    "sass": "^1.32.7",
+    "sass-loader": "^13.0.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-config-standard-scss": "^4.0.0",
+    "stylelint-order": "^5.0.0"
+  }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="author" content="星月夜" />
+    <meta name="description" content="月色暗淡 星光微弱" />
+    <meta name="keywords" content="Code, ACG, Aurora, 星月夜" />
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= BASE_URL %>assets/apple-touch-icon.jpg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= BASE_URL %>assets/favicon-16x16.jpg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= BASE_URL %>assets/favicon-32x32.jpg" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
+    <link rel="dns-prefetch" href="//i0.hdslb.com" />
+    <link rel="dns-prefetch" href="//view.moezx.cc" />
+    <link rel="dns-prefetch" href="//starryiu.github.io" />
+    <!-- 引入样式 -->
+    <style>
+      @font-face {
+        font-family: GuDianMingChaoTi;
+        font-weight: bold;
+        src: url('./assets/font/WenYueGuDianMingChaoTi.ttf');
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gentium+Plus&family=Noto+Serif+SC:wght@300&display=swap" rel="stylesheet"> 
+    <% for(var css of htmlWebpackPlugin.options.cdn.css) { %>
+      <link rel="stylesheet" href="<%=css%>" />
+    <% } %>
+    <script src="/live2d/live2d.min.js"></script>
+    <title>星月夜 | 月色暗淡 星光微弱</title>
+  </head>
+  <body>
+    <noscript>
+      <strong>
+        We're sorry but aurora doesn't work properly without JavaScript enabled. Please enable it to continue.
+      </strong>
+    </noscript>
+    <div id="bg"></div>
+    <div id="app"></div>
+    <!-- 引入JS -->
+    <% for(var js of htmlWebpackPlugin.options.cdn.js) { %>
+    <script src="<%=js%>"></script>
+    <% } %>
+  </body>
+</html>

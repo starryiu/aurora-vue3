@@ -1,0 +1,8 @@
+#archive {
+  .page {
+    overflow: hidden;
+    padding: 16px 0;
+
+    @include card-page;
+  }
+}
