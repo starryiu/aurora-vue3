@@ -15,6 +15,7 @@ import VueProgressBar from "@aacassandra/vue3-progressbar";
 /**
  * 引入样式文件和 icon
  */
+ import 'aos/dist/aos.css'
  import 'gitalk/dist/gitalk.css'
  import 'katex/dist/katex.css'
  import '@/assets/font/fontello.scss'
