@@ -1,7 +1,7 @@
 <template>
   <div id="about">
     <Transition name="fade-transform" mode="out-in">
-      <div class="page" v-if="about">
+      <div class="page" v-if="about.length">
         <Quote :quote="$config.aboutOpts.qoute" />
         <div class="content">
           <div class="header">
@@ -73,21 +73,20 @@ export default {
   data() {
     return {
       colors: shuffle(this.$config.themeColors),
-      about: '',
+      about: [],
       initComment: false,
       countImageSrc:[]
     }
   },
   async mounted() {
     await this.queryAbout()
-    this.initComment = true
-
     //获取访问量
     const count = await queryVisitor()
     this.countImageSrc = createImageSrc({
       number:count,
       theme:'rule34'
     })
+    this.initComment = true
   },
   methods: {
     // 获取关于详情

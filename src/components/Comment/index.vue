@@ -13,7 +13,8 @@ export default {
       default: '',
     },
   },
-  mounted() {
+  async mounted() {
+    await this.$nextTick()
     this.renderGitalk()
   },
   methods: {

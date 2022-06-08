@@ -2,7 +2,7 @@
   <footer>
     <div class="prpr" v-if="!$isMobile.value">
       <div class="waifu" v-if="showWaifu">
-        <div v-show="tips && isMini" :class="['tips', this.waifu === 'tia' && 'tia']" v-html="tips"></div>
+        <div v-show="tips" :class="['tips', this.waifu === 'tia' && 'tia']" v-html="tips"></div>
         <canvas @click="handleClickWaifu" id="live2d" width="280" height="250" />
       </div>
       <div class="tool">
