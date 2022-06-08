@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="prpr" v-if="!$isMobile.value" key="prpr">
+    <div class="prpr" v-if="!$isMobile.value">
       <div class="waifu" v-if="showWaifu">
         <div v-show="tips && isMini" :class="['tips', this.waifu === 'tia' && 'tia']" v-html="tips"></div>
         <canvas @click="handleClickWaifu" id="live2d" width="280" height="250" />
@@ -22,7 +22,7 @@
             <i class="icon icon-emo-devil"></i>
           </div>
         </div>
-        <div id="aplayer" :class="isMini && 'mini'" ref="aplayer"></div>
+        <div class="mini" ref="aplayer"></div>
       </div>
     </div>
     <div class="site-info">
@@ -73,7 +73,6 @@ export default {
         { icon: 'comment', type: 'talk' },
         { icon: 'cancel-outline', type: 'close' },
       ],
-      isMini: true,
       nowYear: '',
       showSwitchBtn: false,
     }

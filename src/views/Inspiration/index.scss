@@ -6,7 +6,7 @@
   }
   .content {
     padding: 16px;
-    ::v-deep.full {
+    :deep(.full) {
       .bg,
       img {
         border-radius: 3px;
