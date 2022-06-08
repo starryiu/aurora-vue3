@@ -1,6 +1,6 @@
 <template>
   <footer>
-    <div class="prpr" v-if="!$isMobile.value">
+    <div class="prpr" v-if="!$isMobile.value" key="prpr">
       <div class="waifu" v-if="showWaifu">
         <div v-show="tips && isMini" :class="['tips', this.waifu === 'tia' && 'tia']" v-html="tips"></div>
         <canvas @click="handleClickWaifu" id="live2d" width="280" height="250" />
@@ -23,7 +23,6 @@
           </div>
         </div>
         <div id="aplayer" :class="isMini && 'mini'" ref="aplayer"></div>
-        <!-- <APlayer :class="isMini && 'mini'" :audio="audio" preload="none" fixed mini @update:mini="handleUpdate" /> -->
       </div>
     </div>
     <div class="site-info">
@@ -83,26 +82,28 @@ export default {
     tips: (state) => state.tips,
     tipsUpdateAt: (state) => state.tipsUpdateAt,
   }),
-  mounted() {
-    const ap = new APlayer({
-      container:this.$refs.aplayer,
-      audio:this.$config.APlayer,
-      fixed: true,
-      preload:'none',
-      productionTip: false,
-      volume:.5
-    });
+  async mounted() {
     this.nowYear = new Date().getFullYear() + ''
-
     /**
      * 是否显示更换人物按钮
      */
     this.showSwitchBtn && this.menu.unshift({ icon: 'venus-double', type: 'switch' })
 
-    /**
-     * 加载人物
-     */
-    this.dressup()
+    await this.$nextTick();
+    if(!this.$isMobile.value){
+      new APlayer({
+        container:this.$refs.aplayer,
+        audio:this.$config.APlayer,
+        fixed: true,
+        preload:'none',
+        productionTip: false,
+        volume:.5
+      });
+      /**
+       * 加载人物
+       */
+      this.dressup()
+    }
   },
   methods: {
     dressup(switchWaifu = false) {
@@ -139,22 +140,12 @@ export default {
       this.$store.dispatch('showTips', { tips: nextTips })
     },
     handleHover(type) {
-      let tips
-      if (type === 'switch') {
-        tips = `要召唤<span style="color: #b854d4">${
-          this.waifu === 'pio' ? ' 欧内酱 Tia ' : ' 一抹多 Pio '
-        } </span>么(◍˃̶ᗜ˂̶◍)✩`
-      } else {
-        tips = hoverTips[type]
-      }
+      let tips = hoverTips[type]
       if (!tips) return
       this.$store.dispatch('showTips', { tips })
     },
     handleClick(type) {
       switch (type) {
-        case 'switch':
-          this.dressup(true)
-          break
         case 'dressup':
           this.dressup()
           break
@@ -177,9 +168,6 @@ export default {
         default:
           return
       }
-    },
-    handleUpdate(isMini) {
-      this.isMini = isMini
     },
     dropPanel() {
       this.$store.commit('setShowPanel', true)
