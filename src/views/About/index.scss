@@ -143,4 +143,16 @@
       }
     }
   }
+  .moe-counter {
+    @include sp-layout {
+      display: none;
+    }
+
+    display: block;
+    padding: 0 0 14px;
+    text-align: center;
+    img {
+      display: inline-block;
+    }
+  }
 }

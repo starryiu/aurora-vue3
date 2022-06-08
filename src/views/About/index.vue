@@ -40,6 +40,9 @@
             <MarkDown :content="item.content" />
           </Segment>
         </div>
+        <div class="moe-counter" v-if="!$isMobile.vlaue">
+          <img v-for="(src,index) in countImageSrc" :key="index" :src="src" :alt="src">
+        </div>
       </div>
       <Loading v-else />
     </Transition>
@@ -55,6 +58,8 @@ import Comment from '@/components/Comment'
 import Quote from '@/components/Quote'
 import Segment from '@/components/Segment'
 import { shuffle } from '@/utils'
+import { queryVisitor } from '@/utils/services'
+import { createImageSrc } from '@/utils/moeCounter'
 
 export default {
   name: 'About',
@@ -70,11 +75,19 @@ export default {
       colors: shuffle(this.$config.themeColors),
       about: '',
       initComment: false,
+      countImageSrc:[]
     }
   },
   async mounted() {
     await this.queryAbout()
     this.initComment = true
+
+    //获取访问量
+    const count = await queryVisitor()
+    this.countImageSrc = createImageSrc({
+      number:count,
+      theme:'rule34'
+    })
   },
   methods: {
     // 获取关于详情

@@ -221,3 +221,22 @@ export const visitorStatistics = async (referrer) => {
       .catch(console.error)
   }).catch(console.error)
 }
+
+//获取访问量
+export const queryVisitor =async () => {
+  return new Promise((resolve)=>{
+    const query = new AV.Query('Visitor')
+    query.find().then((visitor) => {
+      visitor = visitor.map(val=>{
+        let value = val.toJSON()
+        if(value.referrer === 'starryiu.github.io'){
+          return Math.floor(value.time * 0.3)
+        }else{
+          return value.time
+        }
+      })
+      let count = visitor.reduce((total,num)=>total+num)
+      resolve(count)
+    });
+  }).catch(console.error)
+}
