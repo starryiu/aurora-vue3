@@ -5,11 +5,11 @@
   </transition>
   <main class="main">
       <router-view v-slot="{ Component }">
+        <transition name="fade-transform" mode="out-in">
           <keep-alive :exclude="['Post']" :max="10">
-            <transition name="fade-transform" mode="out-in">
-              <component :is="Component" />
-            </transition>
+            <component :is="Component" />
           </keep-alive>
+        </transition>
       </router-view>
   </main>
   <Footer></Footer>

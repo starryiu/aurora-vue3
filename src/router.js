@@ -1,13 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import Home from './views/Home'
-import Post from './views/Post'
-import Archive from './views/Archive'
-import Category from './views/Category'
-import Tag from './views/Tag'
-import Inspiration from './views/Inspiration'
-import Song from './views/Song'
-import Friend from './views/Friend'
-import About from './views/About'
+const Home = () => import('./views/Home')
+const Post = () => import('./views/Post')
+const Archive = () => import('./views/Archive')
+const Category = () => import('./views/Category')
+const Tag = () => import('./views/Tag')
+const Inspiration = () => import('./views/Inspiration')
+const Song = () => import('./views/Song')
+const Friend = () => import('./views/Friend')
+const About = () => import('./views/About')
 
 const routes =[
   {
