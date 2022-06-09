@@ -1,13 +1,13 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-const Home = () => import(/* webpackChunkName: "Body-Home" */ './views/Home')
-const Post = () => import(/* webpackChunkName: "Body-Post" */ './views/Post')
-const Archive = () => import(/* webpackChunkName: "Body-Archive" */ './views/Archive')
-const Category = () => import(/* webpackChunkName: "Body-Category" */ './views/Category')
-const Tag = () => import(/* webpackChunkName: "Body-Tag" */ './views/Tag')
-const Inspiration = () => import(/* webpackChunkName: "Body-Inspiration" */ './views/Inspiration')
-const Song = () => import(/* webpackChunkName: "Body-Song" */ './views/Song')
-const Friend = () => import(/* webpackChunkName: "Body-Friend" */ './views/Friend')
-const About = () => import(/* webpackChunkName: "Body-About" */ './views/About')
+import Home from'./views/Home'
+import Post from'./views/Post'
+import Archive from'./views/Archive'
+import Category from'./views/Category'
+import Tag from'./views/Tag'
+import Inspiration from'./views/Inspiration'
+import Song from'./views/Song'
+import Friend from'./views/Friend'
+import About from'./views/About'
 
 const routes =[
   {
