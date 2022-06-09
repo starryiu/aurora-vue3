@@ -41,7 +41,7 @@
           </Segment>
         </div>
         <div class="moe-counter" v-if="!$isMobile.vlaue">
-          <img v-for="(src,index) in countImageSrc" :key="index" :src="src" :alt="src">
+          <img v-for="(src,index) in ImageSrc" :key="index" :src="src" :alt="src">
         </div>
       </div>
       <Loading v-else />
@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import { once as __once } from 'lodash'
 import MarkDown from '@/components/MarkDown'
 import Loading from '@/components/Loading'
 import Comment from '@/components/Comment'
@@ -75,20 +76,24 @@ export default {
       colors: shuffle(this.$config.themeColors),
       about: [],
       initComment: false,
-      countImageSrc:[]
+      ImageSrc:[]
     }
   },
   async mounted() {
     await this.queryAbout()
     //获取访问量
-    const count = await queryVisitor()
-    this.countImageSrc = createImageSrc({
-      number:count,
+    const visitorNumber =await this.queryVisitor()
+    this.ImageSrc = createImageSrc({
+      number:visitorNumber,
       theme:'rule34'
     })
     this.initComment = true
   },
   methods: {
+    // 获取访问量
+    queryVisitor:__once(async function(){
+      return await queryVisitor()
+    }),
     // 获取关于详情
     async queryAbout() {
       this.about = await this.$store.dispatch('queryPage', { type: 'about' })

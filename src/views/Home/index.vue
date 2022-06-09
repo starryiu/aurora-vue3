@@ -19,7 +19,7 @@
                 />
                 <div class="post-head">
                   <h3>{{ post.title }}</h3>
-                  <span>{{ post.cover.title }}</span>
+                  <span>{{ !['Pixiv:','Pixiv: '].includes(post.cover.title) ? post.cover.title : '' }}</span>
                 </div>
               </div>
               <div class="post-body">

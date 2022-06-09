@@ -227,14 +227,7 @@ export const queryVisitor =async () => {
   return new Promise((resolve)=>{
     const query = new AV.Query('Visitor')
     query.find().then((visitor) => {
-      visitor = visitor.map(val=>{
-        let value = val.toJSON()
-        if(value.referrer === 'starryiu.github.io'){
-          return Math.floor(value.time * 0.3)
-        }else{
-          return value.time
-        }
-      })
+      visitor = visitor.map(val=>val.toJSON().time)
       let count = visitor.reduce((total,num)=>total+num)
       resolve(count)
     });
