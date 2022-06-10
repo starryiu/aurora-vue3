@@ -22,7 +22,7 @@
             <i class="icon icon-emo-devil"></i>
           </div>
         </div>
-        <div class="mini" ref="aplayer"></div>
+        <div class="mini" ref="aplayer" v-show="isMini"></div>
       </div>
     </div>
     <div class="site-info">
@@ -75,6 +75,7 @@ export default {
       ],
       nowYear: '',
       showSwitchBtn: false,
+      isMini:false
     }
   },
   computed: mapState({
@@ -98,6 +99,7 @@ export default {
         productionTip: false,
         volume:.5
       });
+      this.isMini = true
       /**
        * 加载人物
        */
