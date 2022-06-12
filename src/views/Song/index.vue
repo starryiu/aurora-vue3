@@ -1,7 +1,7 @@
 <template>
   <div id="song">
     <Transition name="fade-transform" mode="out-in">
-      <div class="page" v-if="song.length">
+      <div class="page" v-if="!$lodash.isEmpty(song)">
         <Quote :quote="$config.songOpts.qoute" />
         <ul class="content">
           <li v-for="item in song" :key="item.name">

@@ -1,7 +1,7 @@
 <template>
   <div id="archive">
     <Transition name="fade-transform" mode="out-in">
-      <div class="page" v-if="posts.length">
+      <div class="page" v-if="!$lodash.isEmpty(posts)">
         <Quote :quote="$config.archiveOpts.qoute" />
         <ArchiveCard
           :posts="posts"

@@ -36,6 +36,7 @@ export default {
     admin: ['starryiu'],
     distractionFreeMode: false, // 是否开始无干扰模式【背景遮罩】
     proxy: 'https://bokegitalkcors.herokuapp.com/https://github.com/login/oauth/access_token',
+    hidePosts:[], //隐藏文章评论，输入数字id即可；比如 [1,3] ,隐藏id为1，3的文章评论
   },
 
   /**

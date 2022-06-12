@@ -1,7 +1,7 @@
 <template>
   <div id="friend">
     <Transition name="fade-transform" mode="out-in">
-      <div class="page" v-if="friend.length">
+      <div class="page" v-if="!$lodash.isEmpty(friend)">
         <Quote :quote="$config.friendOpts.qoute" />
         <div class="me">
           <span>欢迎各位大佬交换友链 (づ￣ 3￣)づ</span>

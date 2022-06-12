@@ -118,7 +118,7 @@
   width: 100px;
   height: 150px;
   border-radius: 0 2px 2px 0;
-  background-color: $black-light;
+  background-color: lighten($black-light, 20%);
   content: " ";
   transform: translateZ(-12.5px);
 }

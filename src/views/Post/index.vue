@@ -1,7 +1,7 @@
 <template>
   <div id="post">
     <Transition name="fade-transform" mode="out-in">
-      <article v-if="post">
+      <article v-if="!$lodash.isEmpty(post)">
         <div class="post-header">
           <Cover :src="post.cover.src" :alt="post.cover.title" loadCover maskHeight="0.8rem" />
           <div class="post-head">
@@ -36,7 +36,7 @@
       <Loading v-else />
     </Transition>
 
-    <Comment v-if="initComment" :title="post.title" />
+    <Comment v-if="initComment && !hasHideComment" :title="post.title" />
   </div>
 </template>
 
@@ -59,6 +59,11 @@ export default {
     return {
       post: '',
       initComment: false,
+    }
+  },
+  computed: {
+    hasHideComment(){
+      return this.$config.gitalk.hidePosts.includes(Number(this.$route.params.number))
     }
   },
   async mounted() {

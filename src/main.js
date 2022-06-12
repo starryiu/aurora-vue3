@@ -11,6 +11,7 @@ import store from './store'
 import { isMobile } from './utils'
 import AV from 'leancloud-storage'
 import VueProgressBar from "@aacassandra/vue3-progressbar";
+import { isEmpty } from 'lodash'
 
 /**
  * 引入样式文件和 icon
@@ -28,6 +29,7 @@ document.title = `${title} | ${subtitle}`
 // 设置全局变量
 app.config.globalProperties.$config = config
 app.config.globalProperties.$isMobile = reactive({ value: isMobile() })
+app.config.globalProperties.$lodash = { isEmpty }
 
 //初始化 VueProgressBar
 const options = {
@@ -50,6 +52,7 @@ AV.init(config.leancloud)
 
 // 初始化 Cover
 new Image().src = config.defaultCover
+
 app.use(store).use(router).mount('#app')
 
 // (o=^•ェ•)o

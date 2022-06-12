@@ -61,6 +61,7 @@ export default {
     top: 0;
     left: 0;
     opacity: 0;
+    transition: all 0.3s;
   }
   .fadeIn {
     opacity: 1;

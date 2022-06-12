@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <Transition name="fade-transform" mode="out-in">
-      <div v-if="posts.length">
+      <div v-if="!$lodash.isEmpty(posts)">
         <div class="content">
           <article
             class="cursor"
@@ -110,7 +110,7 @@ export default {
       easing: 'ease',
       debounceDelay: 50,
       throttleDelay: 100,
-      offset: 50,
+      offset: 40,
     })
   },
   methods: {

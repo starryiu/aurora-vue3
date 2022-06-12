@@ -1,7 +1,7 @@
 <template>
   <div id="inspiration">
     <Transition name="fade-transform" mode="out-in">
-      <div class="page" v-if="inspiration.length">
+      <div class="page" v-if="!$lodash.isEmpty(inspiration)">
         <Quote :quote="$config.inspirationOpts.qoute" />
         <div class="content">
           <Segment v-for="(item, i) in inspiration" :key="item.number" :title="item.date" :color="colors[i]">

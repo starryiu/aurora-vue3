@@ -1,7 +1,7 @@
 <template>
   <div id="tag">
     <Transition name="fade-transform" mode="out-in">
-      <div class="page" v-if="tag.length">
+      <div class="page" v-if="!$lodash.isEmpty(tag)">
         <Quote :quote="$config.tagOpts.qoute" />
         <Transition name="fade-transform" mode="out-in">
           <div v-if="posts.length">

@@ -1,7 +1,7 @@
 <template>
   <div id="category">
     <Transition name="fade-transform" mode="out-in">
-      <div class="page" v-if="category.length">
+      <div class="page" v-if="!$lodash.isEmpty(category)">
         <Quote :quote="$config.categoryOpts.qoute" />
         <Transition name="fade-transform" mode="out-in">
           <div v-if="posts.length">
@@ -44,6 +44,7 @@
 </template>
 
 <script>
+import { isEmpty as __isEmpty } from 'lodash'
 import Loading from '@/components/Loading'
 import Quote from '@/components/Quote'
 import ArchiveCard from '@/components/ArchiveCard'
