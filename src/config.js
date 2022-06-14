@@ -119,7 +119,7 @@ export default {
     college: 'Communication&Information Engineering',
     contact: [
       // {
-      //   icon: '//jsd.compc.cc/gh/chanshiyucx/yoi/blog/github.png',
+      //   icon: '//fastly.jsdelivr.net/gh/chanshiyucx/yoi/blog/github.png',
       //   link: '',
       // },
     ],
@@ -134,12 +134,12 @@ export default {
   /**
    * 加载动画
    */
-  loadingImg: '//jsd.compc.cc/gh/chanshiyucx/yoi/blog/loading.gif',
+  loadingImg: '//fastly.jsdelivr.net/gh/chanshiyucx/yoi/blog/loading.gif',
 
   /**
    * 文章默认图
    */
-  defaultCover: '//jsd.compc.cc/gh/chanshiyucx/yoi/bg/defaultCover.jpg',
+  defaultCover: '//fastly.jsdelivr.net/gh/chanshiyucx/yoi/bg/defaultCover.jpg',
 
   /**
    * 音乐播放器,

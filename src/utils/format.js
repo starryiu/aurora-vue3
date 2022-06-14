@@ -35,7 +35,7 @@ export const formatCategory = (category) => {
   category.forEach((o) => {
     const description = o.description.split('\r\n')
     o.summary = description[0].split('summary:')[1]
-    o.cover = description[1].split('cover:')[1].replace(/\/\/cdn.jsdelivr.net/g,'//jsd.compc.cc')
+    o.cover = description[1].split('cover:')[1].replace(/\/\/cdn.jsdelivr.net/g,'//fastly.jsdelivr.net')
   })
   return category
 }
