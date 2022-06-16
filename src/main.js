@@ -19,7 +19,7 @@ import { isEmpty } from 'lodash'
  import 'aos/dist/aos.css'
  import 'gitalk/dist/gitalk.css'
  import 'katex/dist/katex.css'
- import '@/assets/font/fontello.scss'
+ import '@/assets/font/fontello/fontello.css'
  import '@/styles/index.scss'
 
 // 设置title

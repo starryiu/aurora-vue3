@@ -11,6 +11,9 @@ export const formatPost = (post) => {
   const { body, created_at } = post
   const result = regex.exec(body)
   const cover = coverRegex.exec(result[1])
+  if(config.postImageUrlReplace.enable){
+    cover[2] = cover[2].replace(new RegExp(config.postImageUrlReplace.old,'g'),config.postImageUrlReplace.new)
+  }
   if (cover && cover.length === 3) {
     post.cover = {
       title: cover[1],

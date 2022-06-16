@@ -63,7 +63,7 @@ export default {
   },
   computed: {
     hasHideComment(){
-      return this.$config.gitalk.hidePosts.includes(Number(this.$route.params.number))
+      return this.$config.hidePosts.includes(Number(this.$route.params.number))
     }
   },
   async mounted() {

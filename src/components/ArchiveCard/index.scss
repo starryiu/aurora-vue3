@@ -1,20 +1,20 @@
 .archive {
   ul {
-    display: grid;
-    grid-column-gap: 16px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     padding: 16px;
-
-    @include pc-layout {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    @include sp-layout {
-      grid-template-columns: 1fr;
-    }
     li {
-      margin: 0 auto 16px;
-      width: 100%;
-      border-top-style: solid;
+      
+      @include pc-layout {
+        width: calc(50% - 8px);
+      }
+  
+      @include sp-layout {
+        width: 100%;
+      }
+      margin: 0 0 16px;
+      border-top-style: solid;  
       border-top-width: 2px;
 
       @include card-light;
@@ -32,7 +32,7 @@
         word-break: keep-all;
 
         @include sp-layout {
-          overflow: auto;
+          overflow-x: auto;
           max-width: 94vw;
         }
         & > span {
