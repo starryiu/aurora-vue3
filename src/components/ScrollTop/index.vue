@@ -29,7 +29,7 @@ export default {
   methods: {
     // 滚动到顶部
     scrollTop() {
-      $('body,html').stop().animate({scrollTop:0})
+      this.$backTop()
     },
     // 监听页面滚动
     handleScroll() {

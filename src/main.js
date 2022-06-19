@@ -10,7 +10,7 @@ import router from './router'
 import store from './store'
 import { isMobile } from './utils'
 import AV from 'leancloud-storage'
-import VueProgressBar from "@aacassandra/vue3-progressbar";
+import VueProgressBar from "@aacassandra/vue3-progressbar"
 import { isEmpty } from 'lodash'
 
 /**
@@ -26,10 +26,16 @@ import { isEmpty } from 'lodash'
 const { title, subtitle } = config
 document.title = `${title} | ${subtitle}`
 
-// 设置全局变量
+// 设置全局变量和函数
 app.config.globalProperties.$config = config
 app.config.globalProperties.$isMobile = reactive({ value: isMobile() })
 app.config.globalProperties.$lodash = { isEmpty }
+app.config.globalProperties.$backTop = function(){
+    let h = $('body,html').scrollTop()
+    let speed = Math.ceil(h / 5.8)
+    speed = speed < 500 ? 500 : speed
+    $('body,html').stop().animate({scrollTop:0},speed)
+}
 
 //初始化 VueProgressBar
 const options = {
@@ -56,7 +62,7 @@ new Image().src = config.defaultCover
 app.use(store).use(router).mount('#app')
 
 // (o=^•ェ•)o
-const labelStyle = 'line-height:22px;color:#FFF;background:#D68FE9;'
+const labelStyle = 'line-height:22pxcolor:#FFFbackground:#D68FE9'
 const themeRepo = 'https://github.com/chanshiyucx/aurora'
 console.info(`%c ${config.title} %c`, labelStyle, '', window.location.origin)
 console.info('%c Theme %c', labelStyle, '', themeRepo)

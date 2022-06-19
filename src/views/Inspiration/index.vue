@@ -97,7 +97,7 @@ export default {
       })
     },
     scrollTop(cb) {
-      $('body,html').stop().animate({scrollTop:0})
+      this.$backTop()
       const delayTime = this.$config.isMobile ? 800 : 600
       setTimeout(cb, delayTime)
     },

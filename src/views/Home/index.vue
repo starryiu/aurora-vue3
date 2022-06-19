@@ -151,7 +151,7 @@ export default {
     },
     // 滚动到顶部
     scrollTop(cb) {
-      $('body,html').stop().animate({scrollTop:0})
+      this.$backTop()
       const delayTime = this.$isMobile.value ? 200 : 0
       setTimeout(cb, 800 + delayTime)
       setTimeout(AOS.refresh, 1200 + delayTime)

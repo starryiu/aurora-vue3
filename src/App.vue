@@ -95,7 +95,7 @@ export default {
     },
     // 滚动到顶部
     scrollTop() {
-      $('body,html').stop().animate({scrollTop:0})
+      this.$backTop()
     },
   },
 

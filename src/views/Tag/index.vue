@@ -134,7 +134,7 @@ export default {
     },
     // 滚动到顶部
     scrollTop(cb) {
-      $('body,html').stop().animate({scrollTop:0})
+      this.$backTop()
       const delayTime = this.$isMobile.value ? 800 : 600
       setTimeout(cb, delayTime)
     },
