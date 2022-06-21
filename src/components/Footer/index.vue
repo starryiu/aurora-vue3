@@ -50,6 +50,7 @@
 
 <script>
 import { mapState } from 'vuex'
+import { throttle as __throttle } from 'lodash'
 import { random } from '@/utils'
 import model from '@/assets/live2d/waifu.json'
 import tips from '@/assets/live2d/tips.json'
@@ -132,20 +133,20 @@ export default {
       const nextTips = hitokotos[inx].hitokoto
       this.$store.dispatch('showTips', { tips: nextTips })
     },
-    handleClickWaifu() {
+    handleClickWaifu: __throttle(function() {
       let nextTips = this.tips
       while (nextTips === this.tips) {
         const inx = random(0, waifuClick.length - 1)
         nextTips = waifuClick[inx]
       }
       this.$store.dispatch('showTips', { tips: nextTips })
-    },
-    handleHover(type) {
+    }, 300),
+    handleHover: __throttle(function(type) {
       let tips = hoverTips[type]
       if (!tips) return
       this.$store.dispatch('showTips', { tips })
-    },
-    handleClick(type) {
+    }, 300),
+    handleClick: __throttle(function(type) {
       switch (type) {
         case 'dressup':
           this.dressup()
@@ -169,7 +170,7 @@ export default {
         default:
           return
       }
-    },
+    }, 300),
     dropPanel() {
       this.$store.commit('setShowPanel', true)
     },
