@@ -5,7 +5,7 @@
         <Quote :quote="$config.friendOpts.qoute" />
         <div class="me">
           <span>欢迎各位大佬交换友链 (づ￣ 3￣)づ</span>
-          <span>★ Bio：{{ $config.title }}</span>
+          <span>★ Bio：{{ $config.nickname }}</span>
           <span>★ Motto：{{ $config.subtitle }}</span>
           <span>★ URL：{{ $config.siteUrl }}</span>
           <span>★ Avatar：<a :href="$config.aboutOpts.avatar" target="_blank">点击获取</a></span>

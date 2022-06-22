@@ -9,7 +9,7 @@
             <div class="info">
               <span>
                 <i class="icon icon-fort-awesome"></i>
-                {{ $config.title }}
+                {{ $config.nickname }}
               </span>
               <span>
                 <i class="icon icon-pagelines"></i>

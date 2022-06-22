@@ -14,9 +14,10 @@ export default {
   /**
    * 站点标题
    */
-  title: '星月夜',
-  subtitle: '月色暗淡 星光微弱',
+  title: '晚风轩',
+  subtitle: '夏风微凉 岁月无恙',
   siteUrl: 'https://starryiu.github.io/',
+  nickname:'STARRYIU',
 
   /**
    * Github Issues 配置
