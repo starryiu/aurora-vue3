@@ -12,6 +12,7 @@ import { isMobile } from './utils'
 import AV from 'leancloud-storage'
 import VueProgressBar from "@aacassandra/vue3-progressbar"
 import { isEmpty } from 'lodash'
+import SmoothScroll from 'smooth-scroll'
 
 /**
  * 引入样式文件和 icon
@@ -30,11 +31,12 @@ document.title = `${title} | ${subtitle}`
 app.config.globalProperties.$config = config
 app.config.globalProperties.$isMobile = reactive({ value: isMobile() })
 app.config.globalProperties.$lodash = { isEmpty }
+const scroll = new SmoothScroll()
 app.config.globalProperties.$backTop = function(){
-    let h = $('body,html').scrollTop()
-    let speed = Math.ceil(h / 5.8)
-    speed = speed < 500 ? 500 : speed
-    $('body,html').stop().animate({scrollTop:0},speed)
+    scroll.animateScroll(0,null,{
+        speed: 600,
+        speedAsDuration: true
+    })
 }
 
 //初始化 VueProgressBar
@@ -48,7 +50,7 @@ const options = {
     },
     location: 'top',
     autoRevert: true,
-    inverse: false,
+    inverse: false
 }
 app.use(VueProgressBar, options)
 
