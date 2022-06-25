@@ -41,7 +41,6 @@
 </template>
 
 <script>
-import { memoize as __memoize } from 'lodash'
 import MarkDown from '@/components/MarkDown'
 import Loading from '@/components/Loading'
 import Comment from '@/components/Comment'
@@ -76,9 +75,9 @@ export default {
   },
   methods: {
     // 获取文章详情
-    queryPost: __memoize(async function(number) {
-      return Promise.resolve(await this.$store.dispatch('queryPost', { number }))
-    }),
+    async queryPost(number) {
+      return await this.$store.dispatch('queryPost', { number })
+    },
     // 获取并增加热度
     async queryHot() {
       const hot = await this.$store.dispatch('increaseHot', { post: this.post })

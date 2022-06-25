@@ -58,8 +58,9 @@ export default {
   position: relative;
   .cover {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
     opacity: 0;
     transition: all 0.3s;
   }
