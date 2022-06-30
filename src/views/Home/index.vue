@@ -110,7 +110,7 @@ export default {
       easing: 'ease',
       debounceDelay: 50,
       throttleDelay: 100,
-      offset: 40,
+      offset: 45,
     })
   },
   methods: {

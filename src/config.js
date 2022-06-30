@@ -14,8 +14,8 @@ export default {
   /**
    * 站点标题
    */
-  title: '晚风轩',
-  subtitle: '夏风微凉 岁月无恙',
+  title: '魔法方',
+  subtitle: '世界充满了魔法与方块',
   siteUrl: 'https://starryiu.github.io/',
   nickname:'STARRYIU',
 

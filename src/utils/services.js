@@ -221,15 +221,3 @@ export const visitorStatistics = async (referrer) => {
       .catch(console.error)
   }).catch(console.error)
 }
-
-//获取访问量
-export const queryVisitor =async () => {
-  return new Promise((resolve)=>{
-    const query = new AV.Query('Visitor')
-    query.find().then((visitor) => {
-      visitor = visitor.map(val=>val.toJSON().time)
-      let count = visitor.reduce((total,num)=>total+num)
-      resolve(count)
-    });
-  }).catch(console.error)
-}

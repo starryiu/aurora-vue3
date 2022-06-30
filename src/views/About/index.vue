@@ -52,14 +52,13 @@
 </template>
 
 <script>
-import { once as __once } from 'lodash'
+import { format } from 'timeago.js'
 import MarkDown from '@/components/MarkDown'
 import Loading from '@/components/Loading'
 import Comment from '@/components/Comment'
 import Quote from '@/components/Quote'
 import Segment from '@/components/Segment'
 import { shuffle } from '@/utils'
-import { queryVisitor } from '@/utils/services'
 import { createImageSrc } from '@/utils/moeCounter'
 
 export default {
@@ -81,19 +80,18 @@ export default {
   },
   async mounted() {
     await this.queryAbout()
-    //获取访问量
-    const visitorNumber =await this.queryVisitor()
-    this.ImageSrc = createImageSrc({
-      number:visitorNumber,
-      theme:'rule34'
-    })
+    this.getDays()
     this.initComment = true
   },
   methods: {
-    // 获取访问量
-    queryVisitor:__once(async function(){
-      return await queryVisitor()
-    }),
+    //设置网站建立天数
+    getDays(){
+      const days = Math.floor((Date.now() - Date.parse("2021/4/3 00:00")) / 86400000)
+      this.ImageSrc = createImageSrc({
+        number: days,
+        theme: 'rule34'
+      })
+    },
     // 获取关于详情
     async queryAbout() {
       this.about = await this.$store.dispatch('queryPage', { type: 'about' })
