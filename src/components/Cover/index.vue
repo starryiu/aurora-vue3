@@ -58,10 +58,12 @@ export default {
   position: relative;
   .cover {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
-    transform: translateY(-50%);
     opacity: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: all 0.3s;
   }
   .fadeIn {
